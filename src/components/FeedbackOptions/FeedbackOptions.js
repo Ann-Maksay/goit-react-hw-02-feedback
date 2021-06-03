@@ -1,9 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import { FeedbackOptionsWrapper } from "./FeedbackOptionsStyled";
+
 const FeedbackOptions = ({ onLeaveFeedback, options }) => {
   return (
-    <div>
+    <FeedbackOptionsWrapper>
       {options.map((elem) => {
         return (
           <button
@@ -11,12 +13,13 @@ const FeedbackOptions = ({ onLeaveFeedback, options }) => {
             name={elem.toLowerCase()}
             onClick={onLeaveFeedback}
             key={elem}
+            className="feedbackButton"
           >
             {elem}
           </button>
         );
       })}
-    </div>
+    </FeedbackOptionsWrapper>
   );
 };
 
