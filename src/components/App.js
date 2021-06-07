@@ -42,7 +42,9 @@ class App extends Component {
           />
         </Section>
         <Section title="Statistics">
-          {total > 0 && (
+          {total === 0 ? (
+            <Notification message="No feedback given" />
+          ) : (
             <Statistics
               good={this.state.good}
               neutral={this.state.neutral}
@@ -51,7 +53,6 @@ class App extends Component {
               positiveFeedback={positiveFeedbackPercentage}
             />
           )}
-          {total === 0 && <Notification message="No feedback given" />}
         </Section>
       </>
     );
